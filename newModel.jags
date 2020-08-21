@@ -1,0 +1,923 @@
+
+
+model{
+
+###############################################################
+# Conditional probability of the observables
+# via a latent class model
+###############################################################
+
+# Discrete-Bernoulli
+for(i in 1:n){
+    x1[i,1:3] ~ dmulti(Bern1[theta1[i]+1,1:3],1)
+}
+
+for(i in 1:n){
+    x2[i,1:3] ~ dmulti(Bern2[theta1[i]+1,1:3],1)
+}
+
+for(i in 1:n){
+    x3[i,1:3] ~ dmulti(Bern3[theta1[i]+1,1:3],1)
+}
+
+for(i in 1:n){
+    x4[i,1:3] ~ dmulti(Bern4[theta1[i]+1,1:3],1)
+}
+
+for(i in 1:n){
+    x5[i,1:3] ~ dmulti(Bern5[theta1[i]+1,1:3],1)
+}
+
+for(i in 1:n){
+    x6[i,1:3] ~ dmulti(Bern6[theta1[i]+1,1:3],1)
+}
+
+# Continuous-Beta
+for(i in 1:n){
+    x7[i] ~ dbern(Beta7[theta4[i]+1])
+  }
+
+for(i in 1:n){
+    x8[i] ~ dbern(Beta8[theta4[i]+1])
+}
+
+for(i in 1:n){
+    x9[i] ~ dbern(Beta9[theta4[i]+1])
+}
+
+for(i in 1:n){
+    x10[i] ~ dbern(Beta10[theta4[i]+1])
+  }
+
+# Discrete-Binomial
+for(i in 1:n){
+    x11[i] ~ dbern(Bino11[theta2[i]+1])
+}
+
+for(i in 1:n){
+    x12[i] ~ dbern(Bino12[theta2[i]+1])
+}
+
+for(i in 1:n){
+    x13[i] ~ dbern(Bino13[theta2[i]+1])
+}
+
+for(i in 1:n){
+    x14[i] ~ dbern(Bino14[theta2[i]+1])
+}
+
+for(i in 1:n){
+    x15[i] ~ dbern(Bino15[theta2[i]+1])
+}
+
+for(i in 1:n){
+    x16[i] ~ dbern(Bino16[theta2[i]+1])
+}
+
+for(i in 1:n){
+    x17[i] ~ dbern(Bino17[theta2[i]+1])
+}
+
+for(i in 1:n){
+    x18[i] ~ dbern(Bino18[theta2[i]+1])
+}
+
+for(i in 1:n){
+    x19[i] ~ dbern(Bino19[theta2[i]+1])
+}
+
+for(i in 1:n){
+    x20[i] ~ dbern(Bino20[theta2[i]+1])
+}
+
+# Continuous-Continuous Uniform
+for(i in 1:n){
+    x21[i,1:3] ~ dmulti(Cont_Unif21[theta3[i]+1,1:3],1)
+}
+
+for(i in 1:n){
+    x22[i,1:3] ~ dmulti(Cont_Unif22[theta3[i]+1,1:3],1)
+}
+
+for(i in 1:n){
+    x23[i,1:3] ~ dmulti(Cont_Unif23[theta3[i]+1,1:3],1)
+}
+
+for(i in 1:n){
+    x24[i,1:3] ~ dmulti(Cont_Unif24[theta3[i]+1,1:3],1)
+}
+
+for(i in 1:n){
+    x25[i,1:3] ~ dmulti(Cont_Unif25[theta3[i]+1,1:3],1)
+}
+
+for(i in 1:n){
+    x26[i,1:3] ~ dmulti(Cont_Unif26[theta3[i]+1,1:3],1)
+}
+
+for(i in 1:n){
+    x27[i,1:3] ~ dmulti(Cont_Unif27[theta3[i]+1,1:3],1)
+}
+
+for(i in 1:n){
+    x28[i,1:3] ~ dmulti(Cont_Unif28[theta3[i]+1,1:3],1)
+}
+
+for(i in 1:n){
+    x29[i,1:3] ~ dmulti(Cont_Unif29[theta3[i]+1,1:3],1)
+}
+
+#Discrete-Discrete Uniform
+for(i in 1:n){
+    x30[i] ~ dbern(Dis_Unif30[theta9[i]+1])
+}
+
+for(i in 1:n){
+    x31[i] ~ dbern(Dis_Unif31[theta9[i]+1])
+}
+
+for(i in 1:n){
+    x32[i] ~ dbern(Dis_Unif32[theta9[i]+1])
+}
+
+for(i in 1:n){
+    x33[i] ~ dbern(Dis_Unif33[theta9[i]+1])
+}
+
+for(i in 1:n){
+    x34[i] ~ dbern(Dis_Unif34[theta9[i]+1])
+}
+
+# Continuous-Exponential
+for(i in 1:n){
+    x35[i,1:3] ~ dmulti(Exp35[theta5[i]+1,1:3],1)
+}
+
+for(i in 1:n){
+    x36[i,1:3] ~ dmulti(Exp36[theta5[i]+1,1:3],1)
+}
+
+for(i in 1:n){
+    x37[i,1:3] ~ dmulti(Exp37[theta5[i]+1,1:3],1)
+}
+
+for(i in 1:n){
+    x38[i,1:3] ~ dmulti(Exp38[theta5[i]+1,1:3],1)
+}
+
+for(i in 1:n){
+    x39[i,1:3] ~ dmulti(Exp39[theta5[i]+1,1:3],1)
+}
+
+for(i in 1:n){
+    x40[i,1:3] ~ dmulti(Exp40[theta5[i]+1,1:3],1)
+}
+
+for(i in 1:n){
+    x41[i,1:3] ~ dmulti(Exp41[theta5[i]+1,1:3],1)
+}
+
+for(i in 1:n){
+    x42[i,1:3] ~ dmulti(Exp42[theta5[i]+1,1:3],1)
+}
+
+# Continuous-Gamma
+for(i in 1:n){
+    x43[i] ~ dbern(Gamma43[theta6[i]+1])
+}
+
+for(i in 1:n){
+    x44[i] ~ dbern(Gamma44[theta6[i]+1])
+}
+
+for(i in 1:n){
+    x45[i] ~ dbern(Gamma45[theta6[i]+1])
+}
+
+for(i in 1:n){
+    x46[i] ~ dbern(Gamma46[theta6[i]+1])
+}
+
+for(i in 1:n){
+    x47[i] ~ dbern(Gamma47[theta6[i]+1])
+}
+
+for(i in 1:n){
+    x48[i] ~ dbern(Gamma48[theta6[i]+1])
+}
+
+for(i in 1:n){
+    x49[i] ~ dbern(Gamma49[theta6[i]+1])
+}
+
+
+# Discrete-Geometric
+for(i in 1:n){
+    x50[i,1:3] ~ dmulti(Geom50[theta7[i]+1,1:3],1)
+}
+
+for(i in 1:n){
+    x51[i,1:3] ~ dmulti(Geom51[theta7[i]+1,1:3],1)
+}
+
+for(i in 1:n){
+    x52[i,1:3] ~ dmulti(Geom52[theta7[i]+1,1:3],1)
+}
+
+for(i in 1:n){
+    x53[i,1:3] ~ dmulti(Geom53[theta7[i]+1,1:3],1)
+}
+
+for(i in 1:n){
+    x54[i,1:3] ~ dmulti(Geom54[theta7[i]+1,1:3],1)
+}
+
+for(i in 1:n){
+    x55[i,1:3] ~ dmulti(Geom55[theta7[i]+1,1:3],1)
+}
+
+for(i in 1:n){
+    x56[i,1:3] ~ dmulti(Geom56[theta7[i]+1,1:3],1)
+}
+
+# Discrete-Negative Binomial
+for(i in 1:n){
+    x61[i] ~ dbern(Nega_Bino61[theta8[i]+1])
+}
+
+for(i in 1:n){
+    x62[i] ~ dbern(Nega_Bino62[theta8[i]+1])
+}
+
+for(i in 1:n){
+    x63[i] ~ dbern(Nega_Bino63[theta8[i]+1])
+}
+
+for(i in 1:n){
+    x64[i] ~ dbern(Nega_Bino64[theta8[i]+1])
+}
+
+for(i in 1:n){
+    x65[i] ~ dbern(Nega_Bino65[theta8[i]+1])
+}
+
+for(i in 1:n){
+    x66[i] ~ dbern(Nega_Bino66[theta8[i]+1])
+}
+
+for(i in 1:n){
+    x67[i] ~ dbern(Nega_Bino67[theta8[i]+1])
+}
+
+for(i in 1:n){
+    x68[i] ~ dbern(Nega_Bino68[theta8[i]+1])
+}
+
+# Continuous-Normal
+for(i in 1:n){
+    x69[i] ~ dbern(Normal69[theta11[i]+1])
+}
+
+for(i in 1:n){
+    x70[i] ~ dbern(Normal70[theta11[i]+1])
+}
+
+for(i in 1:n){
+    x71[i] ~ dbern(Normal71[theta11[i]+1])
+}
+
+for(i in 1:n){
+    x72[i] ~ dbern(Normal72[theta11[i]+1])
+}
+
+for(i in 1:n){
+    x73[i] ~ dbern(Normal73[theta11[i]+1])
+}
+
+for(i in 1:n){
+    x74[i] ~ dbern(Normal74[theta11[i]+1])
+}
+
+for(i in 1:n){
+    x75[i] ~ dbern(Normal75[theta11[i]+1])
+}
+
+for(i in 1:n){
+    x76[i] ~ dbern(Normal76[theta11[i]+1])
+}
+
+for(i in 1:n){
+    x77[i] ~ dbern(Normal77[theta11[i]+1])
+}
+
+for(i in 1:n){
+    x78[i] ~ dbern(Normal78[theta11[i]+1])
+}
+
+for(i in 1:n){
+    x79[i] ~ dbern(Normal79[theta11[i]+1])
+}
+
+for(i in 1:n){
+    x80[i] ~ dbern(Normal80[theta11[i]+1])
+}
+
+# Discrete-Poisson
+for (i in 1:n){
+    x81[i] ~ dbern(Poisson81[theta10[i]+1])
+  }
+
+for (i in 1:n){
+    x82[i] ~ dbern(Poisson82[theta10[i]+1])
+  }
+
+for (i in 1:n){
+    x83[i] ~ dbern(Poisson83[theta10[i]+1])
+}
+
+for (i in 1:n){
+    x84[i] ~ dbern(Poisson84[theta10[i]+1])
+}
+
+for(i in 1:n){
+    x85[i] ~ dbern(Poisson85[theta10[i]+1])
+  }
+
+for(i in 1:n){
+    x86[i] ~ dbern(Poisson86[theta10[i]+1])
+}
+
+for(i in 1:n){
+    x87[i] ~ dbern(Poisson87[theta10[i]+1])
+  }
+
+for(i in 1:n){
+    x88[i] ~ dbern(Poisson88[theta10[i]+1])
+}
+
+for(i in 1:n){
+    x89[i] ~ dbern(Poisson89[theta10[i]+1])
+}
+
+for(i in 1:n){
+    x90[i] ~ dbern(Poisson90[theta10[i]+1])
+  }
+
+###############################################################
+# Prior distribution for the latent variables
+###############################################################
+
+
+# Bernoulli
+for(i in 1:n){
+  theta1[i] ~ dbern(Bern[s_theta1[i]+1])
+}
+
+# Binomial
+for(i in 1:n){
+  theta2[i] ~ dbern(Bino[s_theta1[i]+1])
+}
+
+# Continuous Uniform
+for(i in 1:n){
+  theta3[i] ~ dbern(Cont_Unif[s_theta2[i]+1])
+}
+
+# Beta
+for(i in 1:n){
+  theta4[i] ~ dbern(Beta[s_theta2[i]+1])
+}
+
+# Exponential
+for(i in 1:n){
+  theta5[i] ~ dbern(Exp[s_theta2[i]+1])
+}
+
+# Gamma
+for(i in 1:n){
+  theta6[i] ~ dbern(Gamma[s_theta2[i]+1])
+}
+
+# Geometric
+for(i in 1:n){
+  theta7[i] ~ dbern(Geom[s_theta1[i]+1])
+}
+
+# Negative Binomial
+for(i in 1:n){
+  theta8[i] ~ dbern(Nega_Bino[s_theta1[i]+1])
+}
+
+# Discrete Uniform
+for(i in 1:n){
+  theta9[i] ~ dbern(Dis_Unif[s_theta1[i]+1])
+}
+
+# Poisson
+for(i in 1:n){
+  theta10[i] ~ dbern(Poisson[s_theta1[i]+1])
+}
+
+# Normal
+for(i in 1:n){
+  theta11[i] ~ dbern(Normal[s_theta2[i]+1])
+}
+
+# Grandparent-Concept: distinguish discrete/continuous or not
+for(i in 1:n){
+  s_theta1[i] ~ dbern(s_lambda1)
+}
+
+for(i in 1:n){
+  s_theta2[i] ~ dbern(s_lambda2)
+}
+
+###############################################################
+# Prior distribution for the parameters
+# that govern the distribution of the latent variables
+###############################################################
+
+Bern[1] ~ dbeta(1,1) 
+Bern[2] ~ dbeta(1,1) T(Bern[1], )
+
+Bino[1] ~ dbeta(1,1) 
+Bino[2] ~ dbeta(1,1) T(Bino[1], )
+
+Cont_Unif[1] ~ dbeta(1,1) 
+Cont_Unif[2] ~ dbeta(1,1) T(Cont_Unif[1], )
+
+Beta[1] ~ dbeta(1,1) 
+Beta[2] ~ dbeta(1,1) T(Beta[1], )
+
+Exp[1] ~ dbeta(1,1) 
+Exp[2] ~ dbeta(1,1) T(Exp[1], )
+
+Gamma[1] ~ dbeta(1,1) 
+Gamma[2] ~ dbeta(1,1) T(Gamma[1], )
+
+Geom[1] ~ dbeta(1,1) 
+Geom[2] ~ dbeta(1,1) T(Geom[1], )
+
+Nega_Bino[1] ~ dbeta(1,1) 
+Nega_Bino[2] ~ dbeta(1,1) T(Nega_Bino[1], )
+
+Dis_Unif[1] ~ dbeta(1,1) 
+Dis_Unif[2] ~ dbeta(1,1) T(Dis_Unif[1], )
+
+Poisson[1] ~ dbeta(1,1) 
+Poisson[2] ~ dbeta(1,1) T(Poisson[1], )
+
+Normal[1] ~ dbeta(1,1) 
+Normal[2] ~ dbeta(1,1) T(Normal[1], )
+
+s_lambda1 ~ dbeta(1,1) 
+s_lambda2 ~ dbeta(1,1) 
+
+
+
+###############################################################
+# Prior distribution for the measurement model parameters
+###############################################################
+
+for (i in 1:3){
+  Bern1[1,i] <- w1[1,i]/sum(w1[1,1],w1[1,2],w1[1,3])
+  w1[1,i] ~ dgamma(1,1)
+  Bern1[2,i] <- w1[2,i]/sum(w1[2,1],w1[2,2],w1[2,3])
+}
+w1[2,1] ~ dgamma(1,1) T(,w1[1,1])
+w1[2,2] ~ dgamma(1,1)
+w1[2,3] ~ dgamma(1,1) T(w1[1,3],)
+
+for (i in 1:3){
+  Bern2[1,i] <- w2[1,i]/sum(w2[1,1],w2[1,2],w2[1,3])
+  w2[1,i] ~ dgamma(1,1)
+  Bern2[2,i] <- w2[2,i]/sum(w2[2,1],w2[2,2],w2[2,3])
+}
+w2[2,1] ~ dgamma(1,1) T(,w2[1,1])
+w2[2,2] ~ dgamma(1,1)
+w2[2,3] ~ dgamma(1,1) T(w2[1,3],)
+
+for (i in 1:3){
+  Bern3[1,i] <- w3[1,i]/sum(w3[1,1],w3[1,2],w3[1,3])
+  w3[1,i] ~ dgamma(1,1)
+  Bern3[2,i] <- w3[2,i]/sum(w3[2,1],w3[2,2],w3[2,3])
+}
+w3[2,1] ~ dgamma(1,1) T(,w3[1,1])
+w3[2,2] ~ dgamma(1,1)
+w3[2,3] ~ dgamma(1,1) T(w3[1,3],)
+
+for (i in 1:3){
+  Bern4[1,i] <- w4[1,i]/sum(w4[1,1],w4[1,2],w4[1,3])
+  w4[1,i] ~ dgamma(1,1)
+  Bern4[2,i] <- w4[2,i]/sum(w4[2,1],w4[2,2],w4[2,3])
+}
+w4[2,1] ~ dgamma(1,1) T(,w4[1,1])
+w4[2,2] ~ dgamma(1,1)
+w4[2,3] ~ dgamma(1,1) T(w4[1,3],)
+
+for (i in 1:3){
+  Bern5[1,i] <- w5[1,i]/sum(w5[1,1],w5[1,2],w5[1,3])
+  w5[1,i] ~ dgamma(1,1)
+  Bern5[2,i] <- w5[2,i]/sum(w5[2,1],w5[2,2],w5[2,3])
+}
+w5[2,1] ~ dgamma(1,1) T(,w5[1,1])
+w5[2,2] ~ dgamma(1,1)
+w5[2,3] ~ dgamma(1,1) T(w5[1,3],)
+
+for (i in 1:3){
+  Bern6[1,i] <- w6[1,i]/sum(w6[1,1],w6[1,2],w6[1,3])
+  w6[1,i] ~ dgamma(1,1)
+  Bern6[2,i] <- w6[2,i]/sum(w6[2,1],w6[2,2],w6[2,3])
+}
+w6[2,1] ~ dgamma(1,1) T(,w6[1,1])
+w6[2,2] ~ dgamma(1,1)
+w6[2,3] ~ dgamma(1,1) T(w6[1,3],)
+
+Beta7[1] ~ dbeta(1,1)
+Beta7[2] ~ dbeta(1,1) T(Beta7[1], )
+
+Beta8[1] ~ dbeta(1,1)
+Beta8[2] ~ dbeta(1,1) T(Beta8[1], )
+
+Beta9[1] ~ dbeta(1,1)
+Beta9[2] ~ dbeta(1,1) T(Beta9[1], )
+
+Beta10[1] ~ dbeta(1,1)
+Beta10[2] ~ dbeta(1,1) T(Beta10[1], )
+
+Bino11[1] ~ dbeta(1,1)
+Bino11[2] ~ dbeta(1,1) T(Bino11[1], )
+
+Bino12[1] ~ dbeta(1,1)
+Bino12[2] ~ dbeta(1,1) T(Bino12[1], )
+
+Bino13[1] ~ dbeta(1,1)
+Bino13[2] ~ dbeta(1,1) T(Bino13[1], )
+
+Bino14[1] ~ dbeta(1,1)
+Bino14[2] ~ dbeta(1,1) T(Bino14[1], )
+
+Bino15[1] ~ dbeta(1,1)
+Bino15[2] ~ dbeta(1,1) T(Bino15[1], )
+
+Bino16[1] ~ dbeta(1,1)
+Bino16[2] ~ dbeta(1,1) T(Bino16[1], )
+
+Bino17[1] ~ dbeta(1,1)
+Bino17[2] ~ dbeta(1,1) T(Bino17[1], )
+
+Bino18[1] ~ dbeta(1,1)
+Bino18[2] ~ dbeta(1,1) T(Bino18[1], )
+
+Bino19[1] ~ dbeta(1,1)
+Bino19[2] ~ dbeta(1,1) T(Bino19[1], )
+
+Bino20[1] ~ dbeta(1,1)
+Bino20[2] ~ dbeta(1,1) T(Bino20[1], )
+
+
+for (i in 1:3){
+  Cont_Unif21[1,i] <- w21[1,i]/sum(w21[1,1],w21[1,2],w21[1,3])
+  w21[1,i] ~ dgamma(1,1)
+  Cont_Unif21[2,i] <- w21[2,i]/sum(w21[2,1],w21[2,2],w21[2,3])
+}
+w21[2,1] ~ dgamma(1,1) T(,w21[1,1])
+w21[2,2] ~ dgamma(1,1)
+w21[2,3] ~ dgamma(1,1) T(w21[1,3],)
+
+for (i in 1:3){
+  Cont_Unif22[1,i] <- w22[1,i]/sum(w22[1,1],w22[1,2],w22[1,3])
+  w22[1,i] ~ dgamma(1,1)
+  Cont_Unif22[2,i] <- w22[2,i]/sum(w22[2,1],w22[2,2],w22[2,3])
+}
+w22[2,1] ~ dgamma(1,1) T(,w22[1,1])
+w22[2,2] ~ dgamma(1,1)
+w22[2,3] ~ dgamma(1,1) T(w22[1,3],)
+
+for (i in 1:3){
+  Cont_Unif23[1,i] <- w23[1,i]/sum(w23[1,1],w23[1,2],w23[1,3])
+  w23[1,i] ~ dgamma(1,1)
+  Cont_Unif23[2,i] <- w23[2,i]/sum(w23[2,1],w23[2,2],w23[2,3])
+}
+w23[2,1] ~ dgamma(1,1) T(,w23[1,1])
+w23[2,2] ~ dgamma(1,1)
+w23[2,3] ~ dgamma(1,1) T(w23[1,3],)
+
+for (i in 1:3){
+  Cont_Unif24[1,i] <- w24[1,i]/sum(w24[1,1],w24[1,2],w24[1,3])
+  w24[1,i] ~ dgamma(1,1)
+  Cont_Unif24[2,i] <- w24[2,i]/sum(w24[2,1],w24[2,2],w24[2,3])
+}
+w24[2,1] ~ dgamma(1,1) T(,w24[1,1])
+w24[2,2] ~ dgamma(1,1)
+w24[2,3] ~ dgamma(1,1) T(w24[1,3],)
+
+for (i in 1:3){
+  Cont_Unif25[1,i] <- w25[1,i]/sum(w25[1,1],w25[1,2],w25[1,3])
+  w25[1,i] ~ dgamma(1,1)
+  Cont_Unif25[2,i] <- w25[2,i]/sum(w25[2,1],w25[2,2],w25[2,3])
+}
+w25[2,1] ~ dgamma(1,1) T(,w25[1,1])
+w25[2,2] ~ dgamma(1,1)
+w25[2,3] ~ dgamma(1,1) T(w25[1,3],)
+
+for (i in 1:3){
+  Cont_Unif26[1,i] <- w26[1,i]/sum(w26[1,1],w26[1,2],w26[1,3])
+  w26[1,i] ~ dgamma(1,1)
+  Cont_Unif26[2,i] <- w26[2,i]/sum(w26[2,1],w26[2,2],w26[2,3])
+}
+w26[2,1] ~ dgamma(1,1) T(,w26[1,1])
+w26[2,2] ~ dgamma(1,1)
+w26[2,3] ~ dgamma(1,1) T(w26[1,3],)
+
+for (i in 1:3){
+  Cont_Unif27[1,i] <- w27[1,i]/sum(w27[1,1],w27[1,2],w27[1,3])
+  w27[1,i] ~ dgamma(1,1)
+  Cont_Unif27[2,i] <- w27[2,i]/sum(w27[2,1],w27[2,2],w27[2,3])
+}
+w27[2,1] ~ dgamma(1,1) T(,w27[1,1])
+w27[2,2] ~ dgamma(1,1)
+w27[2,3] ~ dgamma(1,1) T(w27[1,3],)
+
+for (i in 1:3){
+  Cont_Unif28[1,i] <- w28[1,i]/sum(w28[1,1],w28[1,2],w28[1,3])
+  w28[1,i] ~ dgamma(1,1)
+  Cont_Unif28[2,i] <- w28[2,i]/sum(w28[2,1],w28[2,2],w28[2,3])
+}
+w28[2,1] ~ dgamma(1,1) T(,w28[1,1])
+w28[2,2] ~ dgamma(1,1)
+w28[2,3] ~ dgamma(1,1) T(w28[1,3],)
+
+for (i in 1:3){
+  Cont_Unif29[1,i] <- w29[1,i]/sum(w29[1,1],w29[1,2],w29[1,3])
+  w29[1,i] ~ dgamma(1,1)
+  Cont_Unif29[2,i] <- w29[2,i]/sum(w29[2,1],w29[2,2],w29[2,3])
+}
+w29[2,1] ~ dgamma(1,1) T(,w29[1,1])
+w29[2,2] ~ dgamma(1,1)
+w29[2,3] ~ dgamma(1,1) T(w29[1,3],)
+
+Dis_Unif30[1] ~ dbeta(1,1)
+Dis_Unif30[2] ~ dbeta(1,1) T(Dis_Unif30[1], )
+
+Dis_Unif31[1] ~ dbeta(1,1)
+Dis_Unif31[2] ~ dbeta(1,1) T(Dis_Unif31[1], )
+
+Dis_Unif32[1] ~ dbeta(1,1)
+Dis_Unif32[2] ~ dbeta(1,1) T(Dis_Unif32[1], )
+
+Dis_Unif33[1] ~ dbeta(1,1)
+Dis_Unif33[2] ~ dbeta(1,1) T(Dis_Unif33[1], )
+
+Dis_Unif34[1] ~ dbeta(1,1)
+Dis_Unif34[2] ~ dbeta(1,1) T(Dis_Unif34[1], )
+
+for (i in 1:3){
+  Exp35[1,i] <- w35[1,i]/sum(w35[1,1],w35[1,2],w35[1,3])
+  w35[1,i] ~ dgamma(1,1)
+  Exp35[2,i] <- w35[2,i]/sum(w35[2,1],w35[2,2],w35[2,3])
+}
+w35[2,1] ~ dgamma(1,1) T(,w35[1,1])
+w35[2,2] ~ dgamma(1,1)
+w35[2,3] ~ dgamma(1,1) T(w35[1,3],)
+
+for (i in 1:3){
+  Exp36[1,i] <- w36[1,i]/sum(w36[1,1],w36[1,2],w36[1,3])
+  w36[1,i] ~ dgamma(1,1)
+  Exp36[2,i] <- w36[2,i]/sum(w36[2,1],w36[2,2],w36[2,3])
+}
+w36[2,1] ~ dgamma(1,1) T(,w36[1,1])
+w36[2,2] ~ dgamma(1,1)
+w36[2,3] ~ dgamma(1,1) T(w36[1,3],)
+
+for (i in 1:3){
+  Exp37[1,i] <- w37[1,i]/sum(w37[1,1],w37[1,2],w37[1,3])
+  w37[1,i] ~ dgamma(1,1)
+  Exp37[2,i] <- w37[2,i]/sum(w37[2,1],w37[2,2],w37[2,3])
+}
+w37[2,1] ~ dgamma(1,1) T(,w37[1,1])
+w37[2,2] ~ dgamma(1,1)
+w37[2,3] ~ dgamma(1,1) T(w37[1,3],)
+
+for (i in 1:3){
+  Exp38[1,i] <- w38[1,i]/sum(w38[1,1],w38[1,2],w38[1,3])
+  w38[1,i] ~ dgamma(1,1)
+  Exp38[2,i] <- w38[2,i]/sum(w38[2,1],w38[2,2],w38[2,3])
+}
+w38[2,1] ~ dgamma(1,1) T(,w38[1,1])
+w38[2,2] ~ dgamma(1,1)
+w38[2,3] ~ dgamma(1,1) T(w38[1,3],)
+
+for (i in 1:3){
+  Exp39[1,i] <- w39[1,i]/sum(w39[1,1],w39[1,2],w39[1,3])
+  w39[1,i] ~ dgamma(1,1)
+  Exp39[2,i] <- w39[2,i]/sum(w39[2,1],w39[2,2],w39[2,3])
+}
+w39[2,1] ~ dgamma(1,1) T(,w39[1,1])
+w39[2,2] ~ dgamma(1,1)
+w39[2,3] ~ dgamma(1,1) T(w39[1,3],)
+
+for (i in 1:3){
+  Exp40[1,i] <- w40[1,i]/sum(w40[1,1],w40[1,2],w40[1,3])
+  w40[1,i] ~ dgamma(1,1)
+  Exp40[2,i] <- w40[2,i]/sum(w40[2,1],w40[2,2],w40[2,3])
+}
+w40[2,1] ~ dgamma(1,1) T(,w40[1,1])
+w40[2,2] ~ dgamma(1,1)
+w40[2,3] ~ dgamma(1,1) T(w40[1,3],)
+
+for (i in 1:3){
+  Exp41[1,i] <- w41[1,i]/sum(w41[1,1],w41[1,2],w41[1,3])
+  w41[1,i] ~ dgamma(1,1)
+  Exp41[2,i] <- w41[2,i]/sum(w41[2,1],w41[2,2],w41[2,3])
+}
+w41[2,1] ~ dgamma(1,1) T(,w41[1,1])
+w41[2,2] ~ dgamma(1,1)
+w41[2,3] ~ dgamma(1,1) T(w41[1,3],)
+
+for (i in 1:3){
+  Exp42[1,i] <- w42[1,i]/sum(w42[1,1],w42[1,2],w42[1,3])
+  w42[1,i] ~ dgamma(1,1)
+  Exp42[2,i] <- w42[2,i]/sum(w42[2,1],w42[2,2],w42[2,3])
+}
+w42[2,1] ~ dgamma(1,1) T(,w42[1,1])
+w42[2,2] ~ dgamma(1,1)
+w42[2,3] ~ dgamma(1,1) T(w42[1,3],)
+
+Gamma43[1] ~ dbeta(1,1)
+Gamma43[2] ~ dbeta(1,1) T(Gamma43[1], )
+
+Gamma44[1] ~ dbeta(1,1)
+Gamma44[2] ~ dbeta(1,1) T(Gamma44[1], )
+
+Gamma45[1] ~ dbeta(1,1)
+Gamma45[2] ~ dbeta(1,1) T(Gamma45[1], )
+
+Gamma46[1] ~ dbeta(1,1)
+Gamma46[2] ~ dbeta(1,1) T(Gamma46[1], )
+
+Gamma47[1] ~ dbeta(1,1)
+Gamma47[2] ~ dbeta(1,1) T(Gamma47[1], )
+
+Gamma48[1] ~ dbeta(1,1)
+Gamma48[2] ~ dbeta(1,1) T(Gamma48[1], )
+
+Gamma49[1] ~ dbeta(1,1)
+Gamma49[2] ~ dbeta(1,1) T(Gamma49[1], )
+
+for (i in 1:3){
+  Geom50[1,i] <- w50[1,i]/sum(w50[1,1],w50[1,2],w50[1,3])
+  w50[1,i] ~ dgamma(1,1)
+  Geom50[2,i] <- w50[2,i]/sum(w50[2,1],w50[2,2],w50[2,3])
+}
+w50[2,1] ~ dgamma(1,1) T(,w50[1,1])
+w50[2,2] ~ dgamma(1,1)
+w50[2,3] ~ dgamma(1,1) T(w50[1,3],)
+
+for (i in 1:3){
+  Geom51[1,i] <- w51[1,i]/sum(w51[1,1],w51[1,2],w51[1,3])
+  w51[1,i] ~ dgamma(1,1)
+  Geom51[2,i] <- w51[2,i]/sum(w51[2,1],w51[2,2],w51[2,3])
+}
+w51[2,1] ~ dgamma(1,1) T(,w51[1,1])
+w51[2,2] ~ dgamma(1,1)
+w51[2,3] ~ dgamma(1,1) T(w51[1,3],)
+
+for (i in 1:3){
+  Geom52[1,i] <- w52[1,i]/sum(w52[1,1],w52[1,2],w52[1,3])
+  w52[1,i] ~ dgamma(1,1)
+  Geom52[2,i] <- w52[2,i]/sum(w52[2,1],w52[2,2],w52[2,3])
+}
+w52[2,1] ~ dgamma(1,1) T(,w52[1,1])
+w52[2,2] ~ dgamma(1,1)
+w52[2,3] ~ dgamma(1,1) T(w52[1,3],)
+
+for (i in 1:3){
+  Geom53[1,i] <- w53[1,i]/sum(w53[1,1],w53[1,2],w53[1,3])
+  w53[1,i] ~ dgamma(1,1)
+  Geom53[2,i] <- w53[2,i]/sum(w53[2,1],w53[2,2],w53[2,3])
+}
+w53[2,1] ~ dgamma(1,1) T(,w53[1,1])
+w53[2,2] ~ dgamma(1,1)
+w53[2,3] ~ dgamma(1,1) T(w53[1,3],)
+
+for (i in 1:3){
+  Geom54[1,i] <- w54[1,i]/sum(w54[1,1],w54[1,2],w54[1,3])
+  w54[1,i] ~ dgamma(1,1)
+  Geom54[2,i] <- w54[2,i]/sum(w54[2,1],w54[2,2],w54[2,3])
+}
+w54[2,1] ~ dgamma(1,1) T(,w54[1,1])
+w54[2,2] ~ dgamma(1,1)
+w54[2,3] ~ dgamma(1,1) T(w54[1,3],)
+
+for (i in 1:3){
+  Geom55[1,i] <- w55[1,i]/sum(w55[1,1],w55[1,2],w55[1,3])
+  w55[1,i] ~ dgamma(1,1)
+  Geom55[2,i] <- w55[2,i]/sum(w55[2,1],w55[2,2],w55[2,3])
+}
+w55[2,1] ~ dgamma(1,1) T(,w55[1,1])
+w55[2,2] ~ dgamma(1,1)
+w55[2,3] ~ dgamma(1,1) T(w55[1,3],)
+
+for (i in 1:3){
+  Geom56[1,i] <- w56[1,i]/sum(w56[1,1],w56[1,2],w56[1,3])
+  w56[1,i] ~ dgamma(1,1)
+  Geom56[2,i] <- w56[2,i]/sum(w56[2,1],w56[2,2],w56[2,3])
+}
+w56[2,1] ~ dgamma(1,1) T(,w56[1,1])
+w56[2,2] ~ dgamma(1,1)
+w56[2,3] ~ dgamma(1,1) T(w56[1,3],)
+
+Nega_Bino61[1] ~ dbeta(1,1)
+Nega_Bino61[2] ~ dbeta(1,1) T(Nega_Bino61[1], )
+
+Nega_Bino62[1] ~ dbeta(1,1)
+Nega_Bino62[2] ~ dbeta(1,1) T(Nega_Bino62[1], )
+
+Nega_Bino63[1] ~ dbeta(1,1)
+Nega_Bino63[2] ~ dbeta(1,1) T(Nega_Bino63[1], )
+
+Nega_Bino64[1] ~ dbeta(1,1)
+Nega_Bino64[2] ~ dbeta(1,1) T(Nega_Bino64[1], )
+
+Nega_Bino65[1] ~ dbeta(1,1)
+Nega_Bino65[2] ~ dbeta(1,1) T(Nega_Bino65[1], )
+
+Nega_Bino66[1] ~ dbeta(1,1)
+Nega_Bino66[2] ~ dbeta(1,1) T(Nega_Bino66[1], )
+
+Nega_Bino67[1] ~ dbeta(1,1)
+Nega_Bino67[2] ~ dbeta(1,1) T(Nega_Bino67[1], )
+
+Nega_Bino68[1] ~ dbeta(1,1)
+Nega_Bino68[2] ~ dbeta(1,1) T(Nega_Bino68[1], )
+
+Normal69[1] ~ dbeta(1,1)
+Normal69[2] ~ dbeta(1,1) T(Normal69[1], )
+
+Normal70[1] ~ dbeta(1,1)
+Normal70[2] ~ dbeta(1,1) T(Normal70[1], )
+
+Normal71[1] ~ dbeta(1,1)
+Normal71[2] ~ dbeta(1,1) T(Normal71[1], )
+
+Normal72[1] ~ dbeta(1,1)
+Normal72[2] ~ dbeta(1,1) T(Normal72[1], )
+
+Normal73[1] ~ dbeta(1,1)
+Normal73[2] ~ dbeta(1,1) T(Normal73[1], )
+
+Normal74[1] ~ dbeta(1,1)
+Normal74[2] ~ dbeta(1,1) T(Normal74[1], )
+
+Normal75[1] ~ dbeta(1,1)
+Normal75[2] ~ dbeta(1,1) T(Normal75[1], )
+
+Normal76[1] ~ dbeta(1,1)
+Normal76[2] ~ dbeta(1,1) T(Normal76[1], )
+
+Normal77[1] ~ dbeta(1,1)
+Normal77[2] ~ dbeta(1,1) T(Normal77[1], )
+
+Normal78[1] ~ dbeta(1,1)
+Normal78[2] ~ dbeta(1,1) T(Normal78[1], )
+
+Normal79[1] ~ dbeta(1,1)
+Normal79[2] ~ dbeta(1,1) T(Normal79[1], )
+
+Normal80[1] ~ dbeta(1,1)
+Normal80[2] ~ dbeta(1,1) T(Normal80[1], )
+
+Poisson81[1] ~ dbeta(1,1)
+Poisson81[2] ~ dbeta(1,1) T(Poisson81[1], )
+
+Poisson82[1] ~ dbeta(1,1)
+Poisson82[2] ~ dbeta(1,1) T(Poisson82[1], )
+
+Poisson83[1] ~ dbeta(1,1)
+Poisson83[2] ~ dbeta(1,1) T(Poisson83[1], )
+
+Poisson84[1] ~ dbeta(1,1)
+Poisson84[2] ~ dbeta(1,1) T(Poisson84[1], )
+
+Poisson85[1] ~ dbeta(1,1)
+Poisson85[2] ~ dbeta(1,1) T(Poisson85[1], )
+
+Poisson86[1] ~ dbeta(1,1)
+Poisson86[2] ~ dbeta(1,1) T(Poisson86[1], )
+
+Poisson87[1] ~ dbeta(1,1)
+Poisson87[2] ~ dbeta(1,1) T(Poisson87[1], )
+
+Poisson88[1] ~ dbeta(1,1)
+Poisson88[2] ~ dbeta(1,1) T(Poisson88[1], )
+
+Poisson89[1] ~ dbeta(1,1)
+Poisson89[2] ~ dbeta(1,1) T(Poisson89[1], )
+
+Poisson90[1] ~ dbeta(1,1)
+Poisson90[2] ~ dbeta(1,1) T(Poisson90[1], )
+
+
+} # closes the model
+
